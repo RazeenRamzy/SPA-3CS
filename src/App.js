@@ -1,15 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import UsersView from './UsersView';
 import UserInfoView from './UserInfoView';
 
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route path="/" exact component={UsersView} />
-        <Route path="/user/:id" component={UserInfoView} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<UsersView />} />
+        <Route path="/user/:id" element={<UserInfoView />} />
+      </Routes>
     </Router>
   );
 }
