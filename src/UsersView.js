@@ -1,5 +1,7 @@
+// UsersView.js
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './App.css'; // Import the CSS file
 
 const UsersView = () => {
   const [users, setUsers] = useState([]);
@@ -13,19 +15,18 @@ const UsersView = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Users View</h1>
-      <div className="user-cards-container">
-        {users.map((user) => (
-          <Link key={user.id} to={`/user/${user.id}`}>
-            <div className="user-card">
-              <img src={user.avatar} alt={`Avatar for ${user.first_name}`} />
-              <p>{`${user.first_name} ${user.last_name}`}</p>
-              <p>Email: {user.email}</p>
-            </div>
-          </Link>
-        ))}
-      </div>
+    <div className="container">
+      {users.map((user) => (
+        <Link key={user.id} to={`/user/${user.id}`} className="card" style={{ textDecoration: 'none', width: '30%' }}>
+          <div>
+            <img
+              src={user.avatar}
+              alt={`Avatar for ${user.first_name}`}
+            />
+            <p>{`${user.first_name} ${user.last_name}`}</p>
+          </div>
+        </Link>
+      ))}
     </div>
   );
 };
