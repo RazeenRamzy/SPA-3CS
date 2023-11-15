@@ -7,7 +7,7 @@ const UserInfoView = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Fetch user information from the API based on the user ID
+  
     fetch(`https://reqres.in/api/users/${id}`)
       .then((response) => response.json())
       .then((data) => setUser(data.data))
@@ -24,7 +24,7 @@ const UserInfoView = () => {
           </div>
           <div className="infoCard">
             <p>First Name: {user.first_name}</p>
-            <p>First Name: {user.first_name}</p>
+            <p>Last Name: {user.last_name}</p>
             <p>Email: {user.email}</p>
             <Link to="/">Back to Users</Link>
           </div>

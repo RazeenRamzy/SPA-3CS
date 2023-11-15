@@ -15,7 +15,7 @@ const UsersView = () => {
 
   return (
     <div>
-      <h1>Users</h1>
+       <h1 style={{ marginLeft: '20px' }}>Users</h1>
       <div className="container">
         {users.map((user) => (
           <Link key={user.id} to={`/user/${user.id}`} className="card">
